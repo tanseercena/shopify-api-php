@@ -92,7 +92,9 @@ class OAuth
             'grant_options[]' => $grantOptions,
         ];
 
-        return "https://{$sanitizedShop}/admin/oauth/authorize?" . http_build_query($query);
+        $shopName = str_replace('.myshopify.com', '', $sanitizedShop);
+
+        return "https://admin.shopify.com/store/$shopName/oauth/authorize?" . http_build_query($query);
     }
 
     /**

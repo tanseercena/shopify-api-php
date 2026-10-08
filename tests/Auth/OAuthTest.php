@@ -105,7 +105,7 @@ final class OAuthTest extends BaseTestCase
         $generatedState = $cookiesSet[OAuth::STATE_COOKIE_NAME]->getValue();
         $this->assertEquals(
             // phpcs:ignore
-            "https://shopname.myshopify.com/admin/oauth/authorize?client_id=ash&scope=sleepy%2Ckitty&redirect_uri=$hostScheme%3A%2F%2Fwww.my-friends-cats.com%2Fredirect&state={$generatedState}&grant_options%5B%5D=$grantOptions",
+            "https://admin.shopify.com/store/shopname/oauth/authorize?client_id=ash&scope=sleepy%2Ckitty&redirect_uri=$hostScheme%3A%2F%2Fwww.my-friends-cats.com%2Fredirect&state={$generatedState}&grant_options%5B%5D=$grantOptions",
             $returnUrl
         );
     }
